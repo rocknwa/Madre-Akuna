@@ -1,0 +1,18 @@
+{
+    "TOKENS": {
+      "TOKEN_TO_TRANSFER": "0xTokenAddress1",
+      "TOKEN_TO_SWAP": "0xTokenAddress2",
+      "POOL_FEE": 3000,
+      "SWAP_AMOUNT_IN": 1000000000000000000,
+      "MIN_AMOUNT_OUT": 1000000
+    },
+    "UNISWAP_ROUTER": "0xUniswapRouterAddress",
+    "CONTRACTS": {
+      "MADRE_AKUNA": "0xMadreAkunaContractAddress"
+    },
+    "RECIPIENT_ADDRESS": "0xRecipientAddress",
+    "TRANSFER_AMOUNT": 1000000000000000000,
+    "PROJECT_SETTINGS": {
+      "isDeployed": true
+    }
+  }
