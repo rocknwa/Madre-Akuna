@@ -4,7 +4,7 @@ require("dotenv").config();
 const ethers = require("ethers");
 const config = require('../config.json');
 const { getTokenAndContract } = require('./helpers/helpers');
-const { provider } = require('./helpers/initialization');
+const { provider, router } = require('./helpers/initialization');
 
 // -- CONFIGURATION VALUES HERE -- //
 const TOKEN_TO_TRANSFER = config.TOKENS.TOKEN_TO_TRANSFER;
@@ -12,7 +12,6 @@ const TOKEN_TO_SWAP = config.TOKENS.TOKEN_TO_SWAP;
 const POOL_FEE = config.TOKENS.POOL_FEE;
 const SWAP_AMOUNT_IN = config.TOKENS.SWAP_AMOUNT_IN;
 const MIN_AMOUNT_OUT = config.TOKENS.MIN_AMOUNT_OUT;
-const UNISWAP_ROUTER = config.UNISWAP_ROUTER;
 const MADRE_AKUNA_CONTRACT_ADDRESS = config.CONTRACTS.MADRE_AKUNA;
 
 const main = async () => {
@@ -42,7 +41,7 @@ const transferTokens = async (_madreAkuna, _token, _to, _amount) => {
 const swapTokensOnUniswap = async (_madreAkuna, _tokenIn, _amountIn, _tokenOut, _amountOutMinimum) => {
   const account = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
   const transaction = await _madreAkuna.connect(account)._swapOnV3(
-    UNISWAP_ROUTER,
+    router.getAddress(),
     _tokenIn.address,
     _amountIn,
     _tokenOut.address,

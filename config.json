@@ -6,7 +6,7 @@
       "SWAP_AMOUNT_IN": 1000000000000000000,
       "MIN_AMOUNT_OUT": 1000000
     },
-    "UNISWAP_ROUTER": "0xUniswapRouterAddress",
+    "ROUTER_V3": "0xE592427A0AEce92De3Edee1F18E0157C05861564",
     "CONTRACTS": {
       "MADRE_AKUNA": "0xMadreAkunaContractAddress"
     },
